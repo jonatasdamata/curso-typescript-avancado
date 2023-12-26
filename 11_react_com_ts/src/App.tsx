@@ -1,3 +1,17 @@
+import React from "react";
+
+// 4 - Importação de componentes
+import FirstComponent from "./components/FirstComponent";
+
+// 5 - desestruturando props
+import SecondComponent from "./components/SecondComponent";
+import Destructuring, { Category } from "./components/Destructuring";
+
+// 6 - useState
+import State from "./components/State";
+
+//8 - type
+type textOrNull = string | null
 
 
 function App() {
@@ -12,6 +26,12 @@ function App() {
     return `Olá, ${name}!`;
   };
 
+  //9 - type
+  const myText: textOrNull = "Tem algum texto aqui";
+  let mySecondText: textOrNull = null;
+
+  //mySecondText = "opa"
+
 
   return (
     <div className="App">
@@ -24,6 +44,25 @@ function App() {
         </div>
       )}
       <h3>{userGreeting(name)}</h3>
+      <FirstComponent/>
+      <SecondComponent name="Segundo"/>
+      <Destructuring 
+        title="Primeiro Post"
+        content="Algum conteúdo"
+        commentsQty={10}
+        tags={["ts", "js"]}
+        category={Category.TS}
+        />
+      <Destructuring 
+        title="Segundo Post"
+        content="Algum conteúdo"
+        commentsQty={15}
+        tags={["python"]} 
+        category={Category.P}
+      />     
+      <State />
+      {myText && <p>Tem texto na variável</p>}
+      {mySecondText && <p>Tem texto na variável</p>}
 
     </div>
   );

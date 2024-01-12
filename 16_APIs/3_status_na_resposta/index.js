@@ -18,13 +18,13 @@ app.post('/createproduct', (req, res) => {
     console.log(name)
     console.log(price)
 
-    res.json({ message: `O produto ${name} foi criado com sucesso!` })
+    res.status(201).json({ message: `O produto ${name} foi criado com sucesso!` })
 })
 
 
 
 app.get('/', (req, res) => {
-    res.json( { message: "Primeira rota criada com" } )
+    res.status(200).json( { message: "Primeira rota criada com" } )
 })
 
 app.listen(3000)

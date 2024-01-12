@@ -36,3 +36,11 @@ const name = "Jonatas"
 
 logName()
 console.log(name)
+
+// 2 - arrow function 
+
+const arrownSum = (a, b) => {
+    return a + b
+}
+
+console.log(sum(5,5))
